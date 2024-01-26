@@ -17,10 +17,10 @@ module.exports = {
         },
       },
       subheading: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       des: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
       },
       createdAt: {
         allowNull: false,

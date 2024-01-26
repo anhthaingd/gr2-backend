@@ -30,6 +30,7 @@ export const registerService = ({ username, email, password }) =>
         err: token ? 0 : 2,
         message: token ? "Success register" : "Email existed",
         token: token || null,
+
       });
     } catch (error) {
       reject(error);
@@ -45,7 +46,6 @@ export const loginService = ({ email, password }) =>
         },
         raw: true,
       });
-      console.log(response);
       const isCorrectPassword =
         response && bcrypt.compareSync(password, response.password);
       const token =
@@ -63,6 +63,7 @@ export const loginService = ({ email, password }) =>
           ? "Password incorrect"
           : "Email not found",
         token: token || null,
+        userId: response.id
       });
     } catch (error) {
       reject(error);

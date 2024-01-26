@@ -12,10 +12,10 @@ module.exports = {
         type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       extended_description: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       likelihood_of_attack: {
         type: Sequelize.STRING
@@ -24,7 +24,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       mitigations: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

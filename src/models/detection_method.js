@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
   detection_method.init(
     {
       cweId: DataTypes.STRING,
-      subheading: DataTypes.STRING,
-      des: DataTypes.STRING,
+      subheading: DataTypes.TEXT,
+      des: DataTypes.TEXT,
     },
     {
       sequelize,

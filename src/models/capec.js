@@ -14,11 +14,11 @@ module.exports = (sequelize, DataTypes) => {
   capec.init(
     {
       name: DataTypes.STRING,
-      description: DataTypes.STRING,
-      extended_description: DataTypes.STRING,
+      description: DataTypes.TEXT,
+      extended_description: DataTypes.TEXT,
       likelihood_of_attack: DataTypes.STRING,
       typical_severity: DataTypes.STRING,
-      mitigations: DataTypes.STRING,
+      mitigations: DataTypes.TEXT,
     },
     {
       sequelize,

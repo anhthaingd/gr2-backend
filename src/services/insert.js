@@ -46,29 +46,38 @@ export const insertService = () =>
         });
         item?.cwe.forEach(async (i) => {
           i?.observed_example.forEach(async (o) => {
-            await db.observed_example.create({
-              link: o?.link,
-              name: o?.name,
-              des: o?.des,
-              cweId: i?.cwe_id,
+            await db.observed_example.findOrCreate({
+              where: { name: o?.name, cweId: i?.cwe_id },
+              defaults: {
+                link: o?.link,
+                name: o?.name,
+                des: o?.des,
+                cweId: i?.cwe_id,
+              },
             });
           });
         });
         item?.cwe.forEach(async (i) => {
           i?.potential_mitigations.forEach(async (o) => {
-            await db.potential_mitigations.create({
-              subheading: o?.subheading,
-              des: JSON.stringify(o?.des),
-              cweId: i?.cwe_id,
+            await db.potential_mitigations.findOrCreate({
+              where: { subheading: o?.subheading, cweId: i?.cwe_id },
+              defaults: {
+                subheading: o?.subheading,
+                des: JSON.stringify(o?.des),
+                cweId: i?.cwe_id,
+              },
             });
           });
         });
         item?.cwe.forEach(async (i) => {
           i?.detection_methods.forEach(async (o) => {
-            await db.detection_method.create({
-              subheading: o?.subheading,
-              des: JSON.stringify(o?.des),
-              cweId: i?.cwe_id,
+            await db.detection_method.findOrCreate({
+              where: { subheading: o?.subheading, cweId: i?.cwe_id },
+              defaults: {
+                subheading: o?.subheading,
+                des: JSON.stringify(o?.des),
+                cweId: i?.cwe_id,
+              },
             });
           });
         });
