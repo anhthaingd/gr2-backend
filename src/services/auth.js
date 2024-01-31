@@ -30,7 +30,7 @@ export const registerService = ({ username, email, password }) =>
         err: token ? 0 : 2,
         message: token ? "Success register" : "Email existed",
         token: token || null,
-
+        userId: response[0].id,
       });
     } catch (error) {
       reject(error);
@@ -63,7 +63,7 @@ export const loginService = ({ email, password }) =>
           ? "Password incorrect"
           : "Email not found",
         token: token || null,
-        userId: response.id
+        userId: response.id,
       });
     } catch (error) {
       reject(error);

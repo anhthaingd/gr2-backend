@@ -14,6 +14,7 @@ module.exports = {
         references: {
           model: "posts",
           key: "id",
+          onDelete: 'CASCADE'
         },
       },
       userId: {
@@ -21,7 +22,11 @@ module.exports = {
         references: {
           model: "users",
           key: "id",
+
         },
+      },
+      status: {
+        type: Sequelize.BOOLEAN,
       },
       createdAt: {
         allowNull: false,

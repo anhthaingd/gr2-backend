@@ -33,6 +33,7 @@ const getDetectMethodByCweId = async (req, res) => {
   });
 };
 const getCweByCapecId = async (req,res) => {
+  
   return res.status(200).json({
     success: true,
     data: await cweService.getCweByCapecId(req.params.capecId),
